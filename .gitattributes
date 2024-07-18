@@ -1,0 +1,4 @@
+installation_version_files/node.exe filter=lfs diff=lfs merge=lfs -text
+installation_version_files/SSMS-Setup-ENU.exe filter=lfs diff=lfs merge=lfs -text
+installation_version_files/node.exe[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+installation_version_files/SSMS-Setup-ENU.exe[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
