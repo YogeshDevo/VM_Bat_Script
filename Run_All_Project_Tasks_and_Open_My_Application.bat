@@ -2,8 +2,8 @@
 
 REM Define paths for your scripts and projects
 set BASE_PATH=C:\Users\hp\Desktop\Final_Bat_Script_Result
-set FRONTEND_PATH=C:\Users\hp\Desktop\intern_Arizon_New\gil-cms-react
-set BACKEND_PATH=C:\Users\hp\Downloads\gil_cms_backend\gil_cms_backend
+set FRONTEND_PATH=C:\Users\hp\Desktop\Local_Run_Cms\gil-cms-react
+set BACKEND_PATH=C:\Users\hp\Desktop\Local_Run_Cms\gil_cms_backend
 
 REM Run Proxy and Prod Setup Sequentially
 
@@ -21,7 +21,7 @@ REM 3. Install Node.js
 call "%BASE_PATH%\Node_Installation.bat"
 
 REM 4. Install PM2
-call "%BASE_PATH%\PM2_Installation.bat"
+call "%BASE_PATH%\pm2 latest.bat"
 
 REM 5. Download and extract production files
 call "%BASE_PATH%\Production_file.bat"
@@ -41,11 +41,6 @@ call "%BASE_PATH%\install_sql_server.bat"
 REM 11. Install SSMS
 call "%BASE_PATH%\SSMS_Installation.bat"
 
-REM 12. Validate installations
-call "%BASE_PATH%\Validation_Steps_Ins.bat"
-
-REM 13. Install Zebra Setup Utilities
-call "%BASE_PATH%\ZSU_Installation.bat"
 
 echo ======================================
 echo All setup tasks executed successfully.
@@ -62,7 +57,7 @@ echo ======================================
 cd %BACKEND_PATH%
 git fetch --all
 git pull
-call npm install --legacy-peer-deps
+call npm install 
 call npx prisma db push
 start cmd /k "npm run dev"
 
@@ -72,6 +67,7 @@ echo Starting frontend application...
 echo ======================================
 cd %FRONTEND_PATH%
 call npm install --legacy-peer-deps
+git pull
 start cmd /k "npm start"
 
 echo ======================================
